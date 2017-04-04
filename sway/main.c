@@ -63,6 +63,7 @@ void detect_proprietary() {
 			break;
 		}
 		if (strstr(line, "nvidia")) {
+			setenv("WLC_USE_EGLDEVICE", "1", 0);
 			fprintf(stderr, "\x1B[1;31mWarning: Proprietary nvidia driver support is considered experimental.\x1B[0m\n");
 			free(line);
 			break;
